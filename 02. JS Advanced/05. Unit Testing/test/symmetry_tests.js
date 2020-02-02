@@ -1,5 +1,5 @@
 let expect = require('chai').expect;
-let isSymmetric = require("../02. Check for Symmetry").isSymmetric;
+let isSymmetric = require("../symmetry").isSymmetric;
 
 describe("isSymmetric(arr)", function () {
     it("should return true for [1,2,3,3,2,1]", function () {

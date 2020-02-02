@@ -1,5 +1,5 @@
 let expect = require('chai').expect;
-let createCalculator = require("../04. Add Subtract").createCalculator;
+let createCalculator = require("../calculator").createCalculator;
 
 describe("createCalculator()", function () {
     let calc;
