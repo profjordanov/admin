@@ -6,13 +6,15 @@ function loadCommits() {
         .then(displayCommits)
         .catch(displayError);
 
-    function displayCommits(commits) {
-        for(let commit of commits){
-            $('#commits').append($('<li>').text(commit.commit.author.name + ": " + commit.commit.message));
-        }
+
+}
+
+function displayCommits(commits) {
+    for (let commit of commits) {
+        $('#commits').append($('<li>').text(commit.commit.author.name + ": " + commit.commit.message));
     }
-    
-    function displayError(err) {
-        $('#commits').append($('<li>').text("Error: " + err.status + ' (' + err.statusText + ')'));
-    }
+}
+
+function displayError(err) {
+    $('#commits').append($('<li>').text("Error: " + err.status + ' (' + err.statusText + ')'));
 }
