@@ -53,4 +53,20 @@
         $('#connectionType').text(states[networkState]);
     }
 
+    function getPicture() {
+        navigator.camera.getPicture(succeededCameraCallback, failedCameraCallback, {
+            quality: 25,
+            destinationType: Camera.DestinationType.DATA_URL
+        });
+    }
+
+    function succeededCameraCallback(imageData) {
+        var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
+    }
+
+    function failedCameraCallback(message) {
+        alert(message);
+    }
+
 } )();
