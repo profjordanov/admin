@@ -4,4 +4,8 @@
 
 .\npm i --save-dev chai
 
+"scripts": {
+  "test": "mocha"
+}
+
 .\npm test
