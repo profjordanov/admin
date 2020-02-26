@@ -1,60 +1,85 @@
 ﻿<!DOCTYPE html>
 <html>
-    <head>
-    <!--
-        Customize the content security policy in the meta tag below as needed. Add 'unsafe-inline' to default-src to enable inline JavaScript.
-        For details, see http://go.microsoft.com/fwlink/?LinkID=617521
-    -->
-        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
-        
-        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-        <meta name="format-detection" content="telephone=no">
-        <meta name="msapplication-tap-highlight" content="no">
-        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        <link rel="stylesheet" type="text/css" href="css/index.css">
-        <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
-        <title>MyDevice</title>
-    </head>
-    <body>
-        <div data-role="page" id="weather-page">
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *">
 
-            <div data-role="header" class="header">
-                <h1 id="app-title">MyDevice App</h1>
-                <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
-            </div>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link href="css/jquery.mobile-1.4.5.min.css" rel="stylesheet" />
+    <title>MyDevice</title>
+</head>
+<body>
+    <div data-role="page" id="main-page">
 
-            <div role="main" class="ui-content">
-                <form>
-                    <label for="zip-code">Type your zip code:</label>
-                    <input id="zip-code-input" name="zip-code" placeholder="eg. 98001" required />
-                    <button id="get-weather-btn" data-role="button" data-icon="search">Find Weather</button>
-                </form>
+        <div data-role="header" class="header">
+            <h1 id="app-title">MyDevice App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+        </div>
 
-                <ul id="weather-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow not-displayed">
-                    <li data-role="list-divider" id="title" class="ui-li-divider ui-bar-a"></li>
-                    <li><span id="summary"><span id="temperature"></span> F <img src="" /></span></li>
-                    <li>Wind: <span id="wind"></span> knots</li>
-                    <li>Humidity: <span id="humidity"></span> %</li>
-                    <li>Visibility: <span id="visibility"></span></li>
-                    <li>Sunrise: <span id="sunrise"></span></li>
-                    <li>Sunset: <span id="sunset"></span></li>
-                </ul>
+        <div role="main" class="ui-content">
 
-                <div id="error-msg" class="not-displayed">
-                </div>
-
-            </div>
-
-            <footer data-role="footer" data-position="fixed">
-                <h4>Visual Studio Tools for Cordova Demo</h4>
-            </footer>
+            <ul id="weather-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li>
+                    Cordova version :
+                    <span id="cordovaVersion"></span>
+                </li>
+                <li>
+                    Device's manufacturer :
+                    <span id="manufacturer"></span>
+                </li>
+                <li>
+                    Is it running on a simulator :
+                    <span id="isVirtual"></span>
+                </li>
+                <li>
+                    Device's model :
+                    <span id="deviceModel"></span>
+                </li>
+                <li>
+                    Device's operating system:
+                    <span id="operatingSystem"></span>
+                </li>
+                <li>
+                    Operating system version:
+                    <span id="osVersion"></span>
+                </li>
+                <li>
+                    Universally Unique Identifier:
+                    <span id="uuid"></span>
+                </li>
+                <li>
+                    Device hardware serial number:
+                    <span id="serial"></span>
+                </li>
+                <li>
+                    Battery Percentage:
+                    <span id="batteryStatus"></span>
+                </li>
+                <li>
+                    Is Plugged:
+                    <span id="isPlugged"></span>
+                </li>
+                <li>
+                    Connection type:
+                    <span id="connectionType"></span>
+                </li>
+            </ul>
 
         </div>
 
-        <script src="scripts/jquery-1.8.0.min.js"></script>
-        <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/platformOverrides.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-    </body>
+        <footer data-role="footer" data-position="fixed">
+            <h4>No Rights Reserved</h4>
+        </footer>
+
+    </div>
+
+    <script src="scripts/jquery-1.8.0.min.js"></script>
+    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+</body>
 </html>

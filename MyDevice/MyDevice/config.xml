@@ -103,4 +103,7 @@
     <splash src="res/screens/windows/SplashScreen.scale-240.png" width="1152" height="1920" />
     <splash src="res/screens/windows/SplashScreenPhone.scale-240.png" width="1152" height="1920" />
   </platform>
+  <plugin name="cordova-plugin-device" spec="~2.0.3" />
+  <plugin name="cordova-plugin-battery-status" spec="~2.0.3" />
+  <plugin name="cordova-plugin-network-information" spec="~2.0.2" />
 </widget>
