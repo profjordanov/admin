@@ -12,6 +12,8 @@
         applyDeviceData();
         checkConnection();
         $('#camera-btn').click(getPicture);
+
+        navigator.geolocation.watchPosition(geolocationSuccess, geolocationError);
     };
 
     function onPause() {
@@ -21,6 +23,7 @@
     function onResume() {
         // TODO: This application has been reactivated. Restore application state here.
     };
+
 
     function applyDeviceData() {
         $('#cordovaVersion').text(device.cordova);
@@ -70,4 +73,18 @@
     function failedCameraCallback(message) {
         alert(message);
     }
+
+    function geolocationSuccess(position) {
+        $('#latitude').text(position.coords.latitude);
+        $('#longitude').text(position.coords.longitude);
+        $('#altitude').text(position.coords.altitude);
+        $('#accuracy').text(position.coords.accuracy);
+        $('#altitudeAccuracy').text(position.coords.altitudeAccuracy);
+    }
+
+    function geolocationError(error) {
+        alert('code: ' + error.code + '\n' +
+            'message: ' + error.message + '\n');
+    }
+
 } )();

@@ -21,7 +21,7 @@
 
         <div role="main" class="ui-content">
 
-            <ul id="weather-data" data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+            <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
                 <li>
                     Cordova version :
                     <span id="cordovaVersion"></span>
@@ -72,8 +72,8 @@
 
         <footer data-role="footer" data-position="fixed">
             <h4>
-                Make picture  
-                <a href="#camera-page" data-transition="slide"  data-role="button" data-icon="camera">Camera</a>
+                Make picture
+                <a href="#camera-page" data-transition="slide" data-role="button" data-icon="camera">Camera</a>
             </h4>
         </footer>
 
@@ -88,11 +88,62 @@
 
         <div role="main" class="ui-content">
             <button id="camera-btn" data-role="button" data-icon="camera">CLICK</button>
-            <img id="myImage" src="#" alt="Alternate Text" class="not-displayed" style="margin: auto;"/>
+            <img id="myImage" src="#" alt="Alternate Text" class="not-displayed" style="margin: auto;" />
         </div>
 
         <footer data-role="footer" data-position="fixed">
-            <h4>No Rights Reserved</h4>
+            <h4>
+                <a href="#main-page" 
+                   data-transition="slide" 
+                   data-role="button" 
+                   class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-l">Info</a>
+                <a href="#geolocation-page" 
+                   data-transition="slide"
+                   data-role="button"
+                   class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location">GPS</a>
+            </h4>
+        </footer>
+
+    </div>
+
+    <div data-role="page" id="geolocation-page">
+
+        <div data-role="header" class="header">
+            <h1 id="app-title">MyDevice App</h1>
+            <a href="/" class="ui-btn ui-btn-left ui-btn-corner-all ui-icon-home ui-btn-icon-notext" rel="external">Home</a>
+        </div>
+
+        <div role="main" class="ui-content">
+
+            <ul data-role="listview" data-inset="true" class="ui-listview ui-listview-inset ui-corner-all ui-shadow">
+                <li>
+                    Latitude :
+                    <span id="latitude"></span>
+                </li>
+                <li>
+                    Longitude :
+                    <span id="longitude"></span>
+                </li>
+                <li>
+                    Altitude :
+                    <span id="altitude"></span>
+                </li>
+                <li>
+                    Accuracy :
+                    <span id="accuracy"></span>
+                </li>
+                <li>
+                    Altitude Accuracy :
+                    <span id="altitudeAccuracy"></span>
+                </li>                          
+            </ul>
+
+        </div>
+        <footer data-role="footer" data-position="fixed">
+            <h4>
+                Make picture
+                <a href="#camera-page" data-transition="slide" data-role="button" data-icon="camera">Camera</a>
+            </h4>
         </footer>
 
     </div>
