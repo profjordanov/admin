@@ -11,6 +11,7 @@
 
         applyDeviceData();
         checkConnection();
+        $('#camera-btn').click(getPicture);
     };
 
     function onPause() {
@@ -61,8 +62,8 @@
     }
 
     function succeededCameraCallback(imageData) {
-        var image = document.getElementById('myImage');
-        image.src = "data:image/jpeg;base64," + imageData;
+        $('#myImage').attr('src', 'data:image/jpeg;base64,' + imageData);
+        $('#myImage').show();
     }
 
     function failedCameraCallback(message) {
