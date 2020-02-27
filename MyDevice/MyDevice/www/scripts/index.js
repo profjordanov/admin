@@ -71,7 +71,7 @@
 
         // vibration
         navigator.vibrate(1000);
-        alert('Just vibrated ! for a sec');
+        alert('Just vibrated for a sec');
     }
 
     function failedCameraCallback(message) {
