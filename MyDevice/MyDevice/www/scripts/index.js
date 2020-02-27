@@ -63,11 +63,11 @@
 
     function succeededCameraCallback(imageData) {
         $('#myImage').attr('src', 'data:image/jpeg;base64,' + imageData);
+        $('#myImage').css('display', 'block');
         $('#myImage').show();
     }
 
     function failedCameraCallback(message) {
         alert(message);
     }
-
 } )();
