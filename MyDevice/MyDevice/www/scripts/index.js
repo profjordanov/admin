@@ -68,6 +68,10 @@
         $('#myImage').attr('src', 'data:image/jpeg;base64,' + imageData);
         $('#myImage').css('display', 'block');
         $('#myImage').show();
+
+        // vibration
+        navigator.vibrate(1000);
+        alert('Just vibrated ! for a sec');
     }
 
     function failedCameraCallback(message) {
