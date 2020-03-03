@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Github Commits</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+    Load Commits Messages for :
+    <br> https://api.github.com/repos/profjordanov/hybrid-app-development/commits
+    <hr>
+
+    <button onclick="loadCommits()">Load Commits</button>
+    <hr>
+
+    <ul id="messages">
+
+    </ul>
+
+    <script>
+        function loadCommits() {
+            $('#messages').empty();
+            const url = "https://api.github.com/repos/profjordanov/hybrid-app-development/commits";
+
+            $.get(url)
+                .then(displayMessages)
+                .catch(displayError);
+
+
+        }
+
+        function displayMessages(commits) {
+            for (let commit of commits) {
+                $('#messages').append($('<li>').text(commit.commit.message));
+            }
+        }
+
+        function displayError(err) {
+            alert("Error" + err);
+        }
+    </script>
+</body>
+
+</html>
