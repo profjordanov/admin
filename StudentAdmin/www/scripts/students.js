@@ -1,4 +1,4 @@
-﻿const baseSurviceUrl = "https://localhost:5001/api/students";
+﻿const baseSurviceUrl = "https://students-manager.azurewebsites.net/api/students";
 const kinveyUsername = "guest";
 const kinveyPassword = "guest";
 const base64Auth = btoa(kinveyUsername + ":" + kinveyPassword);

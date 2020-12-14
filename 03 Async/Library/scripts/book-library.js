@@ -1,7 +1,7 @@
 function startApp() {
     const kinveyBaseUrl = "https://baas.kinvey.com/";
-    const kinveyAppKey = "kid_S1agMOFr";
-    const kinveyAppSecret = "f54c4354d4fe43268769694d219be58b";
+    const kinveyAppKey = "kid_r1lBWJHnw";
+    const kinveyAppSecret = "6537c4ab5c084b6e8818b9fc420ed3a0";
     const kinveyAppAuthHeaders = {
         "Authorization": "Basic " + btoa(kinveyAppKey + ":" + kinveyAppSecret)
     };
