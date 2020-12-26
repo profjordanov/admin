@@ -1,72 +1,121 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
+
 <head>
-	<meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; img-src 'self' data:; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+    <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
+    <meta name="color-scheme" content="light dark">
     <link rel="stylesheet" href="css/index.css">
-    <title>Admin</title>
+    <link rel="stylesheet" type="text/css" href="js/jquery-1.5.0.mobile.min.css">
+    <style>
+        /* For avoiding title truncation in wp8 */
+        
+        .ui-header .ui-title {
+            overflow: visible !important;
+        }
+        /* For fixing the absolute position issue for the default cordova gen page*/
+        
+        #cjp-accordion1 .app {
+            left: 5px !important;
+            margin: 5px !important;
+            position: relative !important;
+        }
+    </style>
+    <title>Hello World</title>
 </head>
 
 <body>
+    <!-- page 1 -->
+    <div data-role="page" id="homePage">
+        <div data-role="header">
+            <h1>Student Admin</h1>
+        </div>
+        <ul data-role="listview" id="results">
+            <li>
+                <a href="#detailsPage">Page1</a>
+            </li>
+        </ul>
 
-    <div data-role="page" id="index-page">
+        <div data-role="footer" data-position="fixed">
+            <h1>Home Page</h1>
+        </div>
+    </div>
+    <!-- home page -->
 
-        <div data-role="header" class="header">
-            <div data-role="navbar">
-                <ul>
-                    <li>
-                        <a href="#index-page" class="ui-btn-active">Home</a>
-                    </li>
-                    <li>
-                        <a href="#new-student">Add</a>
-                    </li>
-                </ul>
+    <!-- Details Page -->
+    <div data-role="page" id="detailsPage">
+        <div data-role="header">
+            <a href="#" data-icon="back" data-rel="back" title="Go back">Back</a>
+            <h1 id="student-name">Student Name</h1>
+        </div>
+
+        <div class="ui-content">
+            <img src="" alt="student-picture-view" id="student-picture-view" height="200" width="200">
+            <br>
+
+            <label for="student-faculty-number">Faculty Number:</label>
+            <p id="student-faculty-number">Student Faculty Number</p>
+
+            <label for="student-email">Email:</label>
+            <p id="student-email">Student Email</p>
+
+            <label for="student-username">User Name:</label>
+            <p id="student-username">Generated User Name</p>
+        </div>
+
+        <div data-role="footer" data-position="fixed">
+            <h4>
+                Make picture
+                <a href="#picturePage" data-transition="slide" data-role="button" data-icon="camera">Camera</a>
+            </h4>
+        </div>
+    </div>
+    <!-- /Details -->
+
+    <!-- Picture Page -->
+    <div data-role="page" id="picturePage">
+        <div data-role="header">
+            <a href="#" data-icon="back" data-rel="back" title="Go back">Back</a>
+            <h1>Student Picture</h1>
+        </div>
+
+        <div class="ui-content">
+            <div>
+                <button id="camera-btn" data-role="button" data-icon="camera">CLICK</button>
+                <img id="myImage" src="#" alt="Alternate Text" class="not-displayed" style="margin: auto;" />
+
+                <label for="facultyNumber">Faculty Number:</label>
+                <input type="text" id="faculty-number" min="1" />
+
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" />
+
+                <button id="addPicture">Add Picture</button>
             </div>
         </div>
 
-        <div role="main" class="ui-content">
-
-            <table id="results" class="ui-responsive table-stroke">
-                <tr>
-                    <th>First Name</th>
-                    <th>Grade</th>
-                </tr>
-            </table>
-
+        <div data-role="footer" data-position="fixed">
+            <h1>Student Picture</h1>
         </div>
-
     </div>
+    <!-- /Picture -->
 
-    <div data-role="page" id="new-student">
-
-        <div data-role="header" class="header">
-            <div data-role="navbar">
-                <ul>
-                    <li>
-                        <a href="#index-page">Home</a>
-                    </li>
-                    <li>
-                        <a href="#new-student" class="ui-btn-active">Add</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-
-        <div role="main" class="ui-content">
-
-        </div>
-
-    </div>
-
-    <script src="scripts/jquery-1.8.0.min.js"></script>
-    <script src="scripts/jquery.mobile-1.4.5.min.js"></script>
     <script src="cordova.js"></script>
-    <script src="scripts/platformOverrides.js"></script>
-    <script src="scripts/students.js"></script>
-    <script src="scripts/index.js"></script>
+    <script type="text/javascript" src="js/jquery-1.11.1.min.js" id="cordova-jquery"></script>
+    <script type="text/javascript" id="jqm-trans-disable">
+        /* For having a faster transition */
+        $(document).on("mobileinit", function() {
+            $.mobile.defaultPageTransition = "none";
+            $.mobile.defaultDialogTransition = "none";
+        });
+    </script>
+    <script type="text/javascript" src="js/jquery-1.5.0.mobile.min.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/students.js"></script>
 </body>
+
 </html>
