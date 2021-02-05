@@ -6,6 +6,8 @@ import {createStackNavigator} from '@react-navigation/stack';
 import Homepage from './Home';
 import {Platform} from 'react-native';
 import Header from "./Header";
+import { navigationRef } from './RootNavigation';
+import Footer from "./Footer";
 
 const Stack = createStackNavigator();
 
@@ -13,6 +15,7 @@ export default function App() {
   return (
       <NavigationContainer
           style={{paddingTop: 0}}
+          ref-{navigationRef}
       >
         <Stack.Navigator
             initialRouteName="Globomantics"
@@ -26,6 +29,7 @@ export default function App() {
               }}
           />
         </Stack.Navigator>
+        <Footer/>
       </NavigationContainer>
   );
 }
