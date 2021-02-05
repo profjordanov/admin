@@ -15,7 +15,7 @@ export default function App() {
   return (
       <NavigationContainer
           style={{paddingTop: 0}}
-          ref-{navigationRef}
+          ref={navigationRef}
       >
         <Stack.Navigator
             initialRouteName="Globomantics"
