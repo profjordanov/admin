@@ -1,0 +1,13 @@
+1) expo init globo-app
+
+2) cd globo-app
+
+3) expo start
+
+4) Home.js
+
+5) yarn add @react-navigation/native
+
+6) yarn add @react-navigation/stack
+
+7) expo install react-native-reanimated react-native-gesture-handler react-native-screens react-native-safe-area-context @react-native-community/masked-view
